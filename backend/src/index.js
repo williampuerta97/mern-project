@@ -1,9 +1,11 @@
 import mongoose from 'mongoose'
 import express from 'express'
 import UserModel from './models/UserModel'
+import cors from 'cors'
 const app = express();
 const PORT = 3001
 
+app.use(cors())
 app.use(express.json())
 
 mongoose.connect('mongodb://localhost:27017/mern', {useNewUrlParser: true, useCreateIndex: true,})
